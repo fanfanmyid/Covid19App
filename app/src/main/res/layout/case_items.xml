@@ -3,47 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/txt_listcase"
-        android:layout_width="wrap_content"
+        android:id="@+id/txt_klaster"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingTop="16dp"
-        android:paddingRight="16dp"
-        tools:text="case" />
+        tools:text = "Nama Provinsi" />
 
     <TextView
-        android:id="@+id/txt_cluster"
-        android:layout_width="wrap_content"
+        android:id="@+id/txt_kasuske"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        tools:text="cluster" />
+        tools:text= "Kasus ke"/>
 
-    <TextView
-        android:id="@+id/txt_age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        tools:text="age" />
+<!--    <TextView-->
+<!--        android:id="@+id/txt_umur"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        tools:text= "Umur"/>-->
 
     <TextView
         android:id="@+id/txt_gender"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        tools:text="gender" />
+        tools:text= "gender"/>
 
     <TextView
         android:id="@+id/txt_status"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp"
-        tools:text="status" />
+        tools:text= "status"/>
 </LinearLayout>

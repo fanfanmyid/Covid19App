@@ -1,3 +1,8 @@
+/**
+ * Created by Fandly on 30/3/2020.
+ * Made With Love
+ */
+
 package com.fandlys.covid19.viewmodel
 
 import android.nfc.Tag
@@ -12,7 +17,7 @@ import cz.msebera.android.httpclient.Header
 import org.json.JSONObject
 import java.lang.Exception
 
-const val TAG = "ProvinceViewModel"
+private const val TAG = "ProvinceViewModel"
 
 class ProvinceViewModel: ViewModel() {
     private val listProvince = MutableLiveData<ArrayList<DataPerProvince>>()
@@ -37,7 +42,10 @@ class ProvinceViewModel: ViewModel() {
                     for (i in 0 until list.length()){
                         val province = list.getJSONObject(i)
                         val provinceItem = DataPerProvince()
+                        //di JSON terdapat provinsi indonesia, jadi saya putuskan untuk menghilangkan
+                        if (province.getInt("fid")== 35) continue
                         provinceItem.id = province.getInt("fid")
+
                         provinceItem.province = province.getString("provinsi")
                         provinceItem.casePositive = province.getInt("kasusPosi")
                         provinceItem.caseRecovered = province.getInt("kasusSemb")

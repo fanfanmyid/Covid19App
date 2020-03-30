@@ -1,3 +1,8 @@
+/**
+ * Created by Fandly on 30/3/2020.
+ * Made With Love
+ */
+
 package com.fandlys.covid19.view.fragment
 
 import android.os.Bundle
@@ -18,14 +23,11 @@ import kotlinx.android.synthetic.main.province_items.*
 import java.util.*
 import kotlin.collections.ArrayList
 
-/**
- * A simple [Fragment] subclass.
- */
+
 class ProvinceFragment : Fragment() {
     private lateinit var adapter: ProvinceAdapter
     private lateinit var viewModel: ProvinceViewModel
 
-    private lateinit var linearLayoutManager: LinearLayoutManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,8 +43,6 @@ class ProvinceFragment : Fragment() {
 
         adapter= ProvinceAdapter()
         adapter.notifyDataSetChanged()
-
-
 
         viewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory()).get(ProvinceViewModel::class.java)
         viewModel.setProvince()

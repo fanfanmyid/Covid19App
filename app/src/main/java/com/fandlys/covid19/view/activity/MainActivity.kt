@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.fandlys.covid19.R
+import com.fandlys.covid19.view.fragment.CaseFragment
 import com.fandlys.covid19.view.fragment.ProvinceFragment
 import com.flarebit.flarebarlib.FlareBar
 import com.flarebit.flarebarlib.Flaretab
@@ -67,6 +68,7 @@ class MainActivity : AppCompatActivity() {
             //tabIndex starts from 0 (zero). Example : 4 tabs = last Index - 3
             when (selectedIndex) {
                 0 -> openFragment(ProvinceFragment())
+                1 -> openFragment(CaseFragment())
 
             }
         }
