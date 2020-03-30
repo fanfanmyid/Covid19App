@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/nama_provinsi"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text = "Nama Provinsi" />
+
+    <TextView
+        android:id="@+id/data_provinsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text= "Data Provinsi"/>
+
+</LinearLayout>
