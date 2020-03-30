@@ -5,11 +5,9 @@
 
 package com.fandlys.covid19.adapter
 
-import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.fandlys.covid19.R
 import com.fandlys.covid19.pojos.DataPerCase

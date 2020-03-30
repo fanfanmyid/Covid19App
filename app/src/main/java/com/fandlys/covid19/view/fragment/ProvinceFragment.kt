@@ -6,22 +6,16 @@
 package com.fandlys.covid19.view.fragment
 
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.fandlys.covid19.R
 import com.fandlys.covid19.adapter.ProvinceAdapter
-import com.fandlys.covid19.pojos.DataPerProvince
 import com.fandlys.covid19.viewmodel.ProvinceViewModel
 import kotlinx.android.synthetic.main.fragment_province.*
-import kotlinx.android.synthetic.main.province_items.*
-import java.util.*
-import kotlin.collections.ArrayList
 
 
 class ProvinceFragment : Fragment() {
@@ -41,13 +35,16 @@ class ProvinceFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        adapter= ProvinceAdapter()
+        adapter = ProvinceAdapter()
         adapter.notifyDataSetChanged()
 
-        viewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory()).get(ProvinceViewModel::class.java)
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.NewInstanceFactory()
+        ).get(ProvinceViewModel::class.java)
         viewModel.setProvince()
         viewModel.getProvince().observe(this, androidx.lifecycle.Observer { listProvince ->
-            if (listProvince != null){
+            if (listProvince != null) {
                 adapter.setData(listProvince)
                 rv_province.layoutManager = LinearLayoutManager(context)
                 rv_province.adapter = adapter

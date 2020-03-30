@@ -6,19 +6,16 @@
 package com.fandlys.covid19.view.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.fandlys.covid19.R
 import com.fandlys.covid19.adapter.CaseAdapter
 import com.fandlys.covid19.viewmodel.DataViewModel
-import com.fandlys.covid19.viewmodel.ProvinceViewModel
 import kotlinx.android.synthetic.main.fragment_case.*
 
 class CaseFragment : Fragment() {
