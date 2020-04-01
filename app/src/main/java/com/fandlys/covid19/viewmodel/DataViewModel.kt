@@ -35,21 +35,26 @@ class DataViewModel : ViewModel() {
                 try {
                     val result = String(responseBody)
                     val responeObjects = JSONObject(result)
-                    val listData = responeObjects.getJSONObject("data")
-                    val list = listData.getJSONArray("nodes")
+                    val list = responeObjects.getJSONArray("data")
                     for (i in 0 until list.length()){
                         val case = list.getJSONObject(i)
                         val caseItem = DataPerCase()
 
-                        caseItem.id = case.getInt("id")
-                        caseItem.caseId = case.getInt("kasus")
-                        caseItem.cluster = case.getString("klaster")
+                        //API telah berubah jadi perbaruannya pak agak sedikit berbeda
+                        caseItem.id = case.getInt("id_pasien")
+                        caseItem.caseId = case.getInt("kode_pasien")
+                        caseItem.cluster = case.getString("keterangan")
 
                         //Bug di Umur idk why null
                         //D/DataViewModel: Value null at umur of type org.json.JSONObject$1 cannot be converted to int
                         //caseItem.age = case.getInt("umur")
-                        caseItem.gender = case.getString("gender")
-                        caseItem.status = case.getString("status")
+                        if (case.getInt("jenis_kelamin") == 0) {
+                            caseItem.gender = "Laki-laki"
+                        } else caseItem.gender = "Perempuan"
+
+                        if (case.getInt("id_status") == 1) {
+                            caseItem.status = "Positif"
+                        } else caseItem.status = "Negatif"
                         listItems.add(caseItem)
                     }
                     listDataPerCase.postValue(listItems)
